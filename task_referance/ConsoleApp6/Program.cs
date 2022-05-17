@@ -6,19 +6,23 @@ namespace ConsoleApp6
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Reverse("Nurlan Faiq Emil Tural Yusif"));
+            string array1 = "Nurlan Faiq Emil Tural Yusif";
+            Console.WriteLine(Reverse(array1));
         }
 
-        static string Reverse(string soz)
+        static string Reverse(string array1)
         {
-            char[] herf = soz.ToCharArray();
-            string ReversedString = "";
-
-            for (int i = herf.Length - 1; i > -1; i--)
+            string array2 = "";
+            foreach (var word in array1.Split(' '))
             {
-                ReversedString += herf[i];
+                string temp = "";
+                foreach (var item in word.ToCharArray())
+                {
+                    temp = item + temp;
+                }
+                array2 = array2 + temp + " ";
             }
-            return ReversedString;
+            return array2;
         }
     }
 }
